@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 export function Hero() {
   const [sticker, setSticker] = useState<number | null>(null);
   const stickerTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const stickerAssets = [4, 5, 7, 8];
   const { scrollY } = useScroll();
   const titleY = useTransform(scrollY, [0, 900], [0, -180]);
 
@@ -16,7 +17,7 @@ export function Hero() {
 
   const showRandomSticker = () => {
     if (stickerTimer.current) clearTimeout(stickerTimer.current);
-    setSticker(Math.floor(Math.random() * 5) + 4);
+    setSticker(stickerAssets[Math.floor(Math.random() * stickerAssets.length)]);
     stickerTimer.current = setTimeout(() => setSticker(null), 1150);
   };
 
@@ -38,7 +39,7 @@ export function Hero() {
       <div className="hero-ui hero-ui-status"><i /> SYSTEM ONLINE</div>
       <div className="hero-ui hero-ui-file"><strong>01</strong><span>WIFE</span></div>
       <div className="hero-ui hero-ui-name"><strong>FANNY</strong><span>ASPIRANTS</span></div>
-      <div className="hero-ui hero-ui-scroll"><span>SCROLL TO EXPLORE</span><b>↓</b></div>
+      <div className="hero-ui hero-ui-scroll"><span>SCROLL TO EXPLORE</span></div>
 
       <span className="hero-spark hero-spark-one" aria-hidden="true" />
       <span className="hero-spark hero-spark-two" aria-hidden="true" />
@@ -116,12 +117,6 @@ export function Hero() {
         <Image src="/assets/full-2.png" alt="Fanny in her Blade of Kibou outfit" fill priority sizes="(max-width: 800px) 90vw, 52vw" />
       </motion.div>
 
-      {/* Decorations */}
-      <Image className="star star-hero" src="/assets/starburst.png" alt="" width={86} height={86} priority />
-      <div className="hud hud-top"><span>LAT 35.6762° N</span><span>LNG 139.6503° E</span></div>
-      <div className="hero-badge"><strong>04</strong><br />ASPIRANTS<br />CHARACTER FILE</div>
-      <div className="hero-name"><strong>FANNY</strong><span>BLADE OF KIBOU</span></div>
-      <div className="hero-index">KIBOU / CHARACTER STUDY / 2024</div>
     </div>
   </section>;
 }

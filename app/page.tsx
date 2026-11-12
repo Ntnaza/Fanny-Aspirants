@@ -1,12 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Ambient } from "@/components/canvas/Ambient";
 import { Hero } from "@/components/hero/Hero";
 import { BentoGrid } from "@/components/bento/BentoGrid";
-import { MarqueeText } from "@/components/effects/MarqueeText";
 import { ScrollReveal } from "@/components/effects/ScrollReveal";
-import { TributeSections, fannyReasons } from "@/components/sections/TributeSections";
+import { TributeSections } from "@/components/sections/TributeSections";
 
 export default function Home() {
   return <main className="site">
@@ -17,10 +15,6 @@ export default function Home() {
       <div className="nav-status"><i /> SYSTEM ONLINE</div>
     </nav>
     <Hero />
-
-    <div className="marquee-divider">
-      <MarqueeText text={fannyReasons} speed={600} />
-    </div>
 
     <TributeSections />
 
@@ -36,7 +30,6 @@ export default function Home() {
         <ScrollReveal>
           <h2>KEEP<br /><i>MOVING.</i></h2>
         </ScrollReveal>
-        <motion.a href="#top" className="back-top" whileHover={{ scale: 1.06 }}>BACK TO TOP <span>↑</span></motion.a>
       </div>
     </footer>
   </main>;

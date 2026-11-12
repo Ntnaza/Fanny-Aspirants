@@ -13,7 +13,7 @@ const stats = [
 export function BentoGrid() {
   return <section className="arsenal combat-archive section-pad" id="arsenal">
     <ScrollReveal>
-      <div className="combat-archive-kicker">04 / COMBAT &amp; OBSESSION ARCHIVE</div>
+      <div className="combat-archive-kicker">01 / COMBAT &amp; OBSESSION ARCHIVE</div>
       <div className="combat-archive-heading">
         <h2>Built for<br /><i>the gap.</i></h2>
         <p>Mobility is not just how she fights.<br />It is how Fanny exists.</p>

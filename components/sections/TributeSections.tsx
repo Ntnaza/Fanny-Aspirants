@@ -37,7 +37,7 @@ export function TributeSections() {
 
     <section className="memory-gallery mood-deck section-pad" style={{ "--mood-accent": activeMoodData.accent } as React.CSSProperties}>
       <ScrollReveal>
-        <div className="tribute-kicker">04 / MEMORY BOARD</div>
+        <div className="tribute-kicker">01 / MEMORY BOARD</div>
         <div className="memory-heading"><h2>Fanny, in<br /><i>every mood.</i></h2><p>A small archive of the expressions that made this website happen.</p></div>
         <div className="memory-grid">
           {moodCards.map((mood, index) => <motion.button type="button" className={`memory-card memory-card-${index + 1} ${activeMood === mood.image ? "is-active" : ""}`} key={mood.image} onClick={() => setActiveMood(mood.image)} whileHover={{ y: -10, rotate: 0 }} whileTap={{ scale: .97 }} aria-label={`Select ${mood.label} mood`}>
